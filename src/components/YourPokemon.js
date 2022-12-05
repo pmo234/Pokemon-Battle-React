@@ -1,13 +1,22 @@
 import Options from "./Options"
 import { useEffect,useState } from "react"
 
-const YourPokemon = ({pokemons,atributes,id,onPokemonSelected,handleTeamSubmit}) =>{
+const YourPokemon = ({pokemons,atributes,id,onPokemonSelected}) =>{
 
     const handleChange = function(event) {
+        event.preventDefault()
         const chosenPokemon = pokemons[event.target.value];
         onPokemonSelected(chosenPokemon);
 
     }
+    
+
+
+    // const handleChange2 = function(event) {
+    //     const chosenPokemon = pokemons[event.target.value];
+    //     onPokemonSelected(chosenPokemon);
+
+    // }
 
     const pokemonOptions = pokemons.map((pokemon, index) => {
         return <option value={index} key={index}>{pokemon.name}</option>
@@ -29,10 +38,9 @@ const YourPokemon = ({pokemons,atributes,id,onPokemonSelected,handleTeamSubmit})
             <option value="" selected>Choose 3rd Pokemon</option>
             {pokemonOptions}
         </select>
-      <button onSubmit={handleTeamSubmit}>
+        <button onClick={handleChange}>
         Click to submit team
-      </button>
-        <Options/>
+        </button>
     </>
     )
 }

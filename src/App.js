@@ -4,9 +4,9 @@ import PokemonContainer from './containers/PokemonContainer';
 function App() {
   return (
 
-    <>
+    <div>
       <PokemonContainer/>
-    </>
+    </div>
     
   );
 }

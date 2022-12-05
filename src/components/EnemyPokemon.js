@@ -2,7 +2,7 @@ const EnemyPokemon = ({pokemon}) =>{
 
     return(<>
             
-            <h2>This is the EnemyPokemon </h2>
+            <h2></h2>
             {/* {pokemon.results[3].name} */}
            </>
     )

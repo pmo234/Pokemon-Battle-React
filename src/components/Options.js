@@ -1,23 +1,29 @@
 import Choices from "./Choices"
 import { useState , useEffect} from "react"
+import './Options.css'
 
-const Options = ({pokemon}) =>{
-    const [actualPokemon,setActualPokemon] = useState("")
+const Options = ({atributes5,attackPokemon,handleAttack}) =>{
+    
 
-    useEffect(()=>
-        setActualPokemon(pokemon)
-    ,[])
+    
+    
 
-    console.log(actualPokemon)
+
+    
 
     return(
-        <div className="pokemon-options">
-            
-        {/* You have selected {actualPokemon.name} */}
-        
+      <h5>
+        What move would you like to choose?
 
-            <Choices/>
-        </div>
+        <br></br>
+        <button onClick = {handleAttack}>{atributes5.moves[0].move.name}</button>
+        <br></br>
+        <button onClick = {handleAttack}>{atributes5.moves[1].move.name}</button>
+        <br></br>
+        <button onClick = {handleAttack}>{atributes5.moves[2].move.name}</button>
+        <br></br>
+        <button onClick = {handleAttack}>{atributes5.moves[3].move.name}</button>
+      </h5>
     )
 }
 
